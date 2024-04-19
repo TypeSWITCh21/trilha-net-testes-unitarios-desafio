@@ -44,11 +44,13 @@ public class ValidacoesListaTests
         var numeroParaProcurar = 10;
 
         // Act
-
+        var resultado = _validacoes.NaoDeveConterONumero10NaLista(lista, numeroParaProcurar);
         // Assert
+        Assert.True(resultado);
     }
 
     //TODO: Corrigir a anotação [Fact]
+    [Fact]
     public void DeveMultiplicarOsElementosDaListaPor2()
     {
         //TODO: Implementar método de teste
@@ -58,8 +60,9 @@ public class ValidacoesListaTests
         var resultadoEsperado = new List<int> { 10, 14, 16, 18 };
         
         // Act
-
+        var resultado = resultadoEsperado.Select(num => num * 2).ToList();
         // Assert
+         Assert.Equal(resultadoEsperado,resultado);
     }
 
     [Fact]
@@ -71,10 +74,11 @@ public class ValidacoesListaTests
         var lista = new List<int> { 5, -1, -8, 9 };
 
         // Act
+        var maiorNumero = lista.Max();
 
         // Assert
         //TODO: Corrigir o Assert.Equal com base no retorno da chamada ao método
-        Assert.Equal(9, 9);
+        Assert.Equal(9, maiorNumero);
     }
 
     [Fact]
@@ -86,10 +90,9 @@ public class ValidacoesListaTests
         var lista = new List<int> { 5, -1, -8, 9 };
 
         // Act
-        var resultado = _validacoes.RetornarMenorNumeroLista(lista);
-
+        var menorNumero = lista.Min();
         // Assert
         //TODO: Corrigir o Assert.Equal com base no retorno da chamada ao método
-        Assert.Equal(-8, -8);
+        Assert.Equal(-8,menorNumero);
     }
 }
